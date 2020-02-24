@@ -3,7 +3,7 @@ package com.anz.test.responses;
 import java.io.Serializable;
 import java.util.Set;
 
-import com.anz.test.models.Transaction;
+import com.anz.test.models.dto.TransactionDto;
 
 public class TransactionResponse extends ServiceResponse implements Serializable
 {
@@ -13,7 +13,7 @@ public class TransactionResponse extends ServiceResponse implements Serializable
      */
     private static final long serialVersionUID = -1272292003736629948L;
 
-    private Set<Transaction> transactionList;
+    private Set<TransactionDto> transactionList;
 
 
     public TransactionResponse(String responseMessage, int responseStatus)
@@ -23,7 +23,7 @@ public class TransactionResponse extends ServiceResponse implements Serializable
     }
 
 
-    public TransactionResponse(String responseMessage, int responseStatus, Set<Transaction> transaction)
+    public TransactionResponse(String responseMessage, int responseStatus, Set<TransactionDto> transaction)
     {
         super(responseMessage, responseStatus);
         this.transactionList = transaction;
@@ -31,7 +31,7 @@ public class TransactionResponse extends ServiceResponse implements Serializable
     }
 
 
-    public Set<Transaction> getTransactionList()
+    public Set<TransactionDto> getTransactionList()
     {
         return transactionList;
     }
